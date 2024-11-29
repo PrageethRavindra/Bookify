@@ -16,7 +16,7 @@ namespace Bookify.Controllers
             _context = context;
         }
 
-        // GET: api/books
+        // GET
         [HttpGet]
         public IActionResult GetBooks()
         {
@@ -31,7 +31,7 @@ namespace Bookify.Controllers
             }
         }
 
-        // GET: api/books/{id}
+        // GET Method
         [HttpGet("{id}")]
         public IActionResult GetBook(int id)
         {
@@ -47,13 +47,13 @@ namespace Bookify.Controllers
             }
         }
 
-        // POST: api/books
+        // POST Method
         [HttpPost]
         public IActionResult AddBook([FromBody] Book book)
         {
             if (!ModelState.IsValid) 
             {
-                return BadRequest(ModelState); // Return bad request if model state is invalid
+                return BadRequest(ModelState); // Return bad request if model state is invalid.
             }
 
             try
@@ -64,7 +64,7 @@ namespace Bookify.Controllers
             }
             catch (DbUpdateException dbEx)
             {
-                // Log the exception (use a logger in real-world applications)
+                // Log the exception and return a server error.
                 return StatusCode(500, $"Error saving data: {dbEx.Message}");
             }
             catch (Exception ex)
@@ -73,7 +73,7 @@ namespace Bookify.Controllers
             }
         }
 
-        // PUT: api/books/{id}
+        // PUT Method
         [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, [FromBody] Book book)
         {
@@ -95,7 +95,7 @@ namespace Bookify.Controllers
             }
         }
 
-        // DELETE: api/books/{id}
+        // DELETE Method
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {

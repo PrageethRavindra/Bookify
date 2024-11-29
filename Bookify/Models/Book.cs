@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations; // Add this for validation attributes
+using System.ComponentModel.DataAnnotations; // Add validation 
 
 namespace Bookify.Models
 {
@@ -6,13 +6,13 @@ namespace Bookify.Models
     {
         public int Id { get; set; }
 
-        [Required]  // Ensures that Title is required
+        [Required]  
         public string Title { get; set; }
 
-        [Required]  // Ensures that Author is required
+        [Required]  
         public string Author { get; set; }
 
-        [Required]  // Ensures that Description is required
+        [Required]  
         public string Description { get; set; }
     }
 }

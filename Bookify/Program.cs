@@ -8,11 +8,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Configure SQLite Database
+// Configure SQLite Database.
 builder.Services.AddDbContext<LibraryContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add CORS
+// Add CORS.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -21,9 +21,9 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader());
 });
 
-var app = builder.Build();  // Declare and initialize the 'app' variable here.
+var app = builder.Build(); // Create the app.
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -33,10 +33,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 
-// Enable CORS globally
+// Enable CORS .
 app.UseCors("AllowAll");
 
-// Map controllers
+// Map controllers.
 app.MapControllers();
 
 app.Run();
