@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Bookify.Models;
 
-namespace LibraryManagementSystem.Data
+namespace Bookify.Data
 {
     public class LibraryContext : DbContext
     {
