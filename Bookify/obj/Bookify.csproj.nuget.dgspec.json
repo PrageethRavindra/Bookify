@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Bookify\\BOOKIFY-backend\\BOOKIFY-backend.csproj": {}
+    "F:\\Bookify\\Bookify\\Bookify\\Bookify.csproj": {}
   },
   "projects": {
-    "D:\\Bookify\\BOOKIFY-backend\\BOOKIFY-backend.csproj": {
+    "F:\\Bookify\\Bookify\\Bookify\\Bookify.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Bookify\\BOOKIFY-backend\\BOOKIFY-backend.csproj",
-        "projectName": "BOOKIFY-backend",
-        "projectPath": "D:\\Bookify\\BOOKIFY-backend\\BOOKIFY-backend.csproj",
+        "projectUniqueName": "F:\\Bookify\\Bookify\\Bookify\\Bookify.csproj",
+        "projectName": "Bookify",
+        "projectPath": "F:\\Bookify\\Bookify\\Bookify\\Bookify.csproj",
         "packagesPath": "C:\\Users\\prage\\.nuget\\packages\\",
-        "outputPath": "D:\\Bookify\\BOOKIFY-backend\\obj\\",
+        "outputPath": "F:\\Bookify\\Bookify\\Bookify\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prage\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -48,17 +48,11 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0, )"
             }
