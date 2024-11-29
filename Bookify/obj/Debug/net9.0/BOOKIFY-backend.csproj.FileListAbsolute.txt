@@ -1,0 +1,7 @@
+D:\Bookify\BOOKIFY-backend\obj\Debug\net9.0\BOOKIFY-backend.csproj.AssemblyReference.cache
+D:\Bookify\BOOKIFY-backend\obj\Debug\net9.0\BOOKIFY-backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bookify\BOOKIFY-backend\obj\Debug\net9.0\BOOKIFY-backend.AssemblyInfoInputs.cache
+D:\Bookify\BOOKIFY-backend\obj\Debug\net9.0\BOOKIFY-backend.AssemblyInfo.cs
+D:\Bookify\BOOKIFY-backend\obj\Debug\net9.0\BOOKIFY-backend.csproj.CoreCompileInputs.cache
+D:\Bookify\BOOKIFY-backend\obj\Debug\net9.0\BOOKIFY-backend.MvcApplicationPartsAssemblyInfo.cs
+D:\Bookify\BOOKIFY-backend\obj\Debug\net9.0\BOOKIFY-backend.MvcApplicationPartsAssemblyInfo.cache
