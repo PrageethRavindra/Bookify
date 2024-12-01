@@ -1,7 +1,6 @@
 F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\appsettings.Development.json
 F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\appsettings.json
 F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\package-lock.json
-F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\Bookify.staticwebassets.endpoints.json
 F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\Bookify.exe
 F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\Bookify.deps.json
 F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\Bookify.runtimeconfig.json
@@ -138,9 +137,7 @@ F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\Bookify.sourcelink.json
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\scopedcss\bundle\Bookify.styles.css
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\staticwebassets.build.json
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\staticwebassets.development.json
-F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\staticwebassets\msbuild.Bookify.Microsoft.AspNetCore.StaticWebAssets.props
-F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\staticwebassets\msbuild.Bookify.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\staticwebassets\msbuild.build.Bookify.props
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Bookify.props
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Bookify.props
@@ -151,3 +148,19 @@ F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\refint\Bookify.dll
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\Bookify.pdb
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\Bookify.genruntimeconfig.cache
 F:\Bookify\Bookify\Bookify\obj\Debug\net8.0\ref\Bookify.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\Microsoft.Build.Locator.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+F:\Bookify\Bookify\Bookify\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
