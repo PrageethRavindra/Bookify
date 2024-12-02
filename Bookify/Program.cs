@@ -1,4 +1,6 @@
 using Bookify.Data;
+using Bookify.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +14,19 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<LibraryContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add CORS.
+// Add Identity services for authentication and authorization.
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+})
+    .AddEntityFrameworkStores<LibraryContext>()
+    .AddDefaultTokenProviders();
+
+// Configure CORS.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -21,9 +35,19 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader());
 });
 
+// Configure authentication and authorization.
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Requires HTTPS
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+    options.LoginPath = "/api/account/login"; // Redirect to login path
+    options.AccessDeniedPath = "/api/account/accessdenied"; // Redirect to access denied path
+});
+
 var app = builder.Build(); // Create the app.
 
-// Configure the HTTP request.
+// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -31,9 +55,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthorization();
+app.UseAuthentication(); // Enable authentication middleware.
+app.UseAuthorization();  // Enable authorization middleware.
 
-// Enable CORS .
+// Enable CORS.
 app.UseCors("AllowAll");
 
 // Map controllers.
