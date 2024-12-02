@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { Link, useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   isAuthenticated: boolean;
@@ -7,11 +8,17 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isAuthenticated, setIsAuthenticated }) => {
+  const navigate = useNavigate();
   const handleLogout = () => {
-    // Clear authentication token from localStorage
-    localStorage.removeItem('authToken');
-    // Update authentication state
-    setIsAuthenticated(false);
+    
+    const confirmLogout = window.confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+      
+      localStorage.removeItem('authToken');
+      // Update authentication state
+      setIsAuthenticated(false);
+      navigate('/login');
+    }
   };
 
   return (

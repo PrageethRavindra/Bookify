@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import { Book } from '../types/Book';
 
-const BookList: React.FC = () => {
+interface BookListProps {
+    mode: 'viewOnly' | 'editable'; // 'viewOnly' for Home and 'editable' for Books
+}
+
+const BookList: React.FC<BookListProps> = ({ mode }) => {
     const [books, setBooks] = useState<Book[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -23,12 +27,15 @@ const BookList: React.FC = () => {
     };
 
     const handleDelete = async (id: number) => {
-        try {
-            await api.delete(`/books/${id}`);
-            setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
-        } catch (error) {
-            setError('Error deleting book');
-            console.error('Error deleting book:', error);
+        const confirmDelete = window.confirm("Are you sure you want to delete this book?");
+        if (confirmDelete) {
+            try {
+                await api.delete(`/books/${id}`);
+                setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id));
+            } catch (error) {
+                setError('Error deleting book');
+                console.error('Error deleting book:', error);
+            }
         }
     };
 
@@ -78,25 +85,24 @@ const BookList: React.FC = () => {
     }
 
     return (
-        <div className="container mx-auto px-4 py-8 flex">
-            {/* Books positioned on the right */}
-            <div className="w-full md:w-2/3 lg:w-3/4 bg-gray-50 rounded-lg shadow-md p-6 space-y-4">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-6">Book List</h2>
-                {books.length === 0 ? (
-                    <p className="text-center text-gray-500">No books available.</p>
-                ) : (
-                    <ul className="space-y-4">
-                        {books.map((book) => (
-                            <li
-                                key={book.id}
-                                className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-                            >
-                                <div className="flex justify-between items-center">
-                                    <div>
-                                        <h3 className="text-xl font-bold text-gray-800">{book.title}</h3>
-                                        <p className="text-sm text-gray-600">Author: {book.author}</p>
-                                        <p className="text-sm text-gray-500">{book.description}</p>
-                                    </div>
+        <div className="container mx-auto px-4 py-8">
+            <h2 className="text-3xl font-semibold text-gray-800 mb-6">Book List</h2>
+            {books.length === 0 ? (
+                <p className="text-center text-gray-500">No books available.</p>
+            ) : (
+                <ul className="space-y-4">
+                    {books.map((book) => (
+                        <li
+                            key={book.id}
+                            className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+                        >
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-800">{book.title}</h3>
+                                    <p className="text-sm text-gray-600">Author: {book.author}</p>
+                                    <p className="text-sm text-gray-500">{book.description}</p>
+                                </div>
+                                {mode === 'editable' && (
                                     <div className="flex space-x-3">
                                         <button
                                             onClick={() => handleDelete(book.id)}
@@ -111,16 +117,15 @@ const BookList: React.FC = () => {
                                             Edit
                                         </button>
                                     </div>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
+                                )}
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            )}
 
-            {/* Editing Form */}
-            {editingBook && (
-                <div className="w-full md:w-1/3 lg:w-1/4 mt-8 md:mt-0 md:ml-6 bg-white rounded-lg shadow-md p-6">
+            {mode === 'editable' && editingBook && (
+                <div className="mt-8 bg-white rounded-lg shadow-md p-6">
                     <h3 className="text-2xl font-semibold text-gray-800 mb-4">Edit Book</h3>
                     <form>
                         <div className="mb-4">

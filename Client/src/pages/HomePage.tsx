@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
 
             {/* Book List Section */}
             <div className="container mx-auto p-6">
-                <BookList />
+                <BookList mode={'viewOnly'} />
             </div>
         </div>
     );

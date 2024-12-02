@@ -21,7 +21,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsAuthenticated }) => {
       });
       localStorage.setItem('authToken', response.data.token);
       setIsAuthenticated(true);
-      navigate('/books');
+      navigate('/');
     } catch (error) {
       setErrorMessage('Invalid username or password');
     }
