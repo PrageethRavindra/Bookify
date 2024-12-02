@@ -18,26 +18,29 @@ public class AccountController : ControllerBase
     }
 
     [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody] RegisterModel model)
+public async Task<IActionResult> Register([FromBody] RegisterModel model)
+{
+    if (!ModelState.IsValid)
     {
-        if (!ModelState.IsValid)
-            return BadRequest(ModelState);
-
-        var user = new User
-        {
-            UserName = model.Username,
-            Email = model.Email
-        };
-
-        var result = await _userManager.CreateAsync(user, model.Password);
-
-        if (result.Succeeded)
-        {
-            return Ok(new { message = "Registration successful." });
-        }
-
-        return BadRequest(result.Errors);
+        return BadRequest(new { message = "One or more fields are invalid.", errors = ModelState });
     }
+
+    var user = new User
+    {
+        UserName = model.Username,
+        Email = model.Email
+    };
+
+    var result = await _userManager.CreateAsync(user, model.Password);
+
+    if (result.Succeeded)
+    {
+        return Ok(new { message = "Registration successful." });
+    }
+
+    return BadRequest(new { message = "Registration failed.", errors = result.Errors });
+}
+
 
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginModel model)
